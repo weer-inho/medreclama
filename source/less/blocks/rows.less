@@ -1,0 +1,44 @@
+.first-row {
+  display: flex;
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translateY(0%);
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translateY(0%);
+}
+
+.shown {
+  opacity: 1;
+}
+
+@media (max-width: 1060px) {
+  .first-row,
+  .second-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .advantages__title {
+    margin: 0;
+  }
+
+  .pricing__title,
+  .pricing__title,
+  .our-advantages__title,
+  .stock__title {
+    text-align: center;
+  }
+
+  .stock__ad::after {
+    display: none;
+  }
+}

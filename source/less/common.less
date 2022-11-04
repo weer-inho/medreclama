@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  font-family: "Commissioner", "Arial", serif;
+}
+
+.page {
+  padding: 19px 16px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+picture {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.label, .input {
+  display: block;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.input-wrapper {
+  position: relative;
+  border: 1px solid blue;
+  border-radius: 6px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.input {
+  position: absolute;
+  bottom: 3px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  color: #38424c;
+
+  &:focus, &:active {
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #acb3b9;
+  transition: all .225s ease-in-out;
+}
+
+.input:focus + .label,
+.input:valid + .label {
+  top: 3px;
+  transform: translateY(0);
+  font-size: 11px;
+}
+
+.input:focus + .label {
+  color: blue;
+  font-weight: bold;
+}
+
+.draggable {
+  padding: 0 17px;
+  background-color: white;
+  cursor: move;
+
+  &.dragging {
+    opacity: .5;
+  }
+}

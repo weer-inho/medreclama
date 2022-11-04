@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <title>Тестовое задание: Medreclama</title>
+  </head>
+  <body class="page">
+
+  <div class="first-row">
+    <div class="avatar-container">
+      <img
+        class="avatar"
+        src="./img/avatar.jpg">
+    </div>
+
+    <div class="stock__container">
+      <h2 class="stock__title">Акция</h2>
+      <p class="stock__description">
+        Профессиональная гигиена зубов + отбеливание <br>
+        системой Opalescence всего за <span class="price">9900 руб.</span>
+      </p>
+      <span class="stock__dates">
+        Срок действия акции с 01.12.2013 г. до 01.01.2014 г.
+      </span>
+      <div class="stock__ad">
+        Сделайте свою улыбку неотразимой и привлекательной
+      </div>
+    </div>
+
+    <div class="form__container">
+      <div class="form__title-container">
+        <h2 class="form__title">Участвовать в акции</h2>
+      </div>
+      <form action="">
+        <p class="form__text">
+          Для того чтобы принять участие в акции позвоните нам: (812) 123-45-67 или оставьте ваш телефон:
+        </p>
+        <div class="input-wrapper">
+          <input type="text" id="name" class="input" required />
+          <label for="name" class="label">Имя Фамилия</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" id="phone" class="input" required />
+          <label for="phone" class="label">Контактный телефон</label>
+        </div>
+        <button class="form__submit-button" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="second-row">
+    <div class="advantages draggable" draggable="true">
+      <h3 class="advantages__title">Преимущества Opalescence:</h3>
+      <ul class="advantages__list">
+        <li class="advantages__list-item">Безопасность</li>
+        <li class="advantages__list-item">Нейтральный рН геля не изменяет структуру зуба.</li>
+        <li class="advantages__list-item">Вода в составе геля не допускает обезвоживания зуба.</li>
+        <li class="advantages__list-item">Защита десен</li>
+        <li class="advantages__list-item">Содержание фторидов уменьшает риск возникновения кариеса.</li>
+        <li class="advantages__list-item">Быстрый и стойкий результат.</li>
+      </ul>
+      <h3 class="advantages__title">Наши специалисты</h3>
+
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="./img/person1.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/person2.jpg">
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+      </div>
+
+    </div>
+    <div class="pricing draggable" draggable="true">
+      <h3 class="pricing__title">В стоимость входит</h3>
+      <ul class="pricing__list">
+        <li class="pricing__list-item">профессиональная чистка зубов</li>
+        <li class="pricing__list-item">отбеливание зубов системой Opalescence</li>
+      </ul>
+      <h3 class="pricing__title">Отзывы о чистке зубов</h3>
+        <a href="#" class="pricing__review-link">Сегодня была в вашей клинике, мне провели процедуру по снятию зубных отложений</a>
+        <a href="#" class="pricing__review-link">В субботу была на чистке зубов (камни, налет)</a>
+    </div>
+    <div class="our-advantages draggable" draggable="true">
+      <h3 class="our-advantages__title">Наши преимущества</h3>
+      <ul class="our-advantages__list">
+        <li class="our-advantages__list-item">
+          <img src="./img/icon1.svg" class="our-advantages__item-icon">
+          <p class="our-advantages__item-description">Гарантированное получение помощи при острой боли в день боли в день обращения</p>
+        </li>
+        <li class="our-advantages__list-item">
+          <img src="./img/icon2.svg" class="our-advantages__item-icon">
+          <p class="our-advantages__item-description">Гарантия на все виды стоматологических услуг</p>
+        </li>
+        <li class="our-advantages__list-item">
+          <img src="./img/icon3.svg" class="our-advantages__item-icon">
+          <p class="our-advantages__item-description">Обслуживание по ДМС</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+
+    const swiper = new Swiper('.swiper', {
+      autoplay: {
+        delay: 5000,
+      },
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+  </body>
+</html>

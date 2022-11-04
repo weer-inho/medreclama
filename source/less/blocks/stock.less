@@ -1,0 +1,40 @@
+.stock__container {
+  width: 420px;
+}
+
+.stock__title {
+  margin: 12px 0px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.stock-__title {
+  margin: 12px 0px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.stock__dates {
+  font-size: 14px;
+  margin: 0;
+}
+
+.stock__ad {
+  position: relative;
+  border: 1px solid blue;
+  background: #F2F2F2;
+  padding: 22px 22px;
+  margin: 23px 0 0;
+  border-radius: 5px;
+
+  &::after {
+    position: absolute;
+    top: -5px;
+    right: -59px;
+    content: '';
+    width: 46px;
+    height: 91px;
+    background-image: url('../img/arrow-right.svg');
+    background-repeat: no-repeat;
+  }
+}
