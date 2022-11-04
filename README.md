@@ -4,7 +4,7 @@
 * Наставник: [Анна Рус](https://htmlacademy.ru/profile/vanillawulf).
 
 ---
-weer-inho.github.io/medreclama/root/
+https://weer-inho.github.io/medreclama/root/
 ---
 
 Очередное тестовое задание. Адаптив. Использовал gulp, LESS, верстал по БЭМу.
