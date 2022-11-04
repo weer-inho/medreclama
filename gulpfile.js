@@ -14,14 +14,14 @@ const del = require("del");
 // Styles
 
 const styles = () => {
-  return gulp.src("source/less/style.less")
+  return gulp.src("root/less/style.less")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([ autoprefixer() ]))
     .pipe(sourcemap.write("."))
     .pipe(rename("style.css"))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("root/css"))
     .pipe(sync.stream());
 }
 
@@ -39,11 +39,11 @@ exports.clean = clean;
 
 const copy = () => {
   return gulp.src([
-    "source/fonts/**/*.{woff, woff2}",
-    "source/js/**",
-    "source/css/**",
-    "source/img/**",
-    "source/*.ico"
+    "root/fonts/**/*.{woff, woff2}",
+    "root/js/**",
+    "root/css/**",
+    "root/img/**",
+    "root/*.ico"
   ], {
     base: "source"
   })
@@ -55,7 +55,7 @@ exports.copy = copy;
 // Images
 
 const images = () => {
-  return gulp.src("source/img/**/*.{jpg, png, svg}")
+  return gulp.src("root/img/**/*.{jpg, png, svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
       imagemin.mozjpeg({progressive: true}),
@@ -69,7 +69,7 @@ exports.images = images;
 // images to webp
 
 const createWebp = () => {
-  return gulp.src("source/img/**/*.{jpg,png}")
+  return gulp.src("root/img/**/*.{jpg,png}")
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest("build/img"))
 }
@@ -79,7 +79,7 @@ exports.createWebp = createWebp;
 // svg sprite
 
 const sprite = () => {
-  return gulp.src("source/img/**/*.svg")
+  return gulp.src("root/img/**/*.svg")
     .pipe(svgstore({
       inlineSvg: true
     }))
@@ -90,7 +90,7 @@ const sprite = () => {
 exports.sprite = sprite;
 
 const html = () => {
-  return gulp.src("source/*.html")
+  return gulp.src("root/*.html")
     .pipe(gulp.dest("build"))
     .pipe(sync.stream());
 };
@@ -102,7 +102,7 @@ exports.html = html;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'source'
+      baseDir: 'root'
     },
     cors: true,
     notify: false,
@@ -129,9 +129,9 @@ exports.build = build;
 // Watcher
 
 const watcher = () => {
-  gulp.watch("source/less/**/*.less", gulp.series("styles"));
-  gulp.watch("source/js/**.js");
-  gulp.watch("source/*.html").on("change", sync.reload);
+  gulp.watch("root/less/**/*.less", gulp.series("styles"));
+  gulp.watch("root/js/**.js");
+  gulp.watch("root/*.html").on("change", sync.reload);
 }
 
 exports.default = gulp.series(
